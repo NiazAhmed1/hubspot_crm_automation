@@ -25,7 +25,7 @@ cd hubspot_crm_automation
 
 Your structure should look like:
 ```
-multi-agent-crm-system/
+hubspot_crm_automation/
 ├── agents/
 │   ├── __init__.py
 │   ├── orchestrator.py
