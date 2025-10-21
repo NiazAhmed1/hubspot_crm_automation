@@ -66,7 +66,7 @@ Successfully installed langchain-... langgraph-... langchain-openai-...
 
 
 
-## Step 3: Get API Keys (20 minutes)
+## Step 3: Get API Keys
 
 ### 3.1 OpenAI API Key
 
