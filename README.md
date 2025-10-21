@@ -128,14 +128,13 @@ Successfully installed langchain-... langgraph-... langchain-openai-...
 3. Select device: **Other (Custom name)**
 4. Enter: **CRM Agent**
 5. Click **"Generate"**
-6. Copy the 16-character password (no spaces)
-7. Example format: `abcd efgh ijkl mnop` → use as `abcdefghijklmnop`
+6. Copy the 16-character password 
 
 
 
 
 
-## Step 4: Configure the Application (5 minutes)
+## Step 4: Configure the Application
 
 ### 4.1 Create config.json
 
