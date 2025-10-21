@@ -18,7 +18,7 @@ This project implements an intelligent Multi-Agent CRM Automation System integra
 ## Step 1: Clone the Repository
 
 ```bash
-git clone git clone https://github.com/NiazAhmed1/hubspot_crm_automation.git
+git clone https://github.com/NiazAhmed1/hubspot_crm_automation.git
 cd Email_MCP
 ```
 
