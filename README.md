@@ -534,7 +534,7 @@ closedlost
 
 
 
-## Step 10: Testing Checklist (5 minutes)
+## Step 10: Testing Checklist
 
 Run through this checklist to ensure everything works:
 
