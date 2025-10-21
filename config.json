@@ -1,0 +1,16 @@
+{
+  "openai": {
+    "api_key": "your-openai-api-key-here",
+    "model": "gpt-4"
+  },
+  "hubspot": {
+    "api_key": "your-hubspot-api-key-here",
+    "base_url": "https://api.hubapi.com"
+  },
+  "email": {
+    "smtp_server": "smtp.gmail.com",
+    "smtp_port": 587,
+    "sender_email": "your-email@gmail.com",
+    "sender_password": "your-app-password-here"
+  }
+}
