@@ -358,7 +358,7 @@ Update deal 12345678 with dealstage closedwon
 
 
 
-## Step 9: Troubleshooting Common Issues (15 minutes)
+## Step 9: Troubleshooting Common Issues
 
 ### Issue 1: "Configuration file not found"
 
