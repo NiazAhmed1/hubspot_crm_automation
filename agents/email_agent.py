@@ -7,23 +7,23 @@ from email.mime.multipart import MIMEMultipart
 from typing import Dict, Any, List
 
 
+
+
 class EmailAgent:
     def __init__(self, smtp_server: str, smtp_port: int, 
                  sender_email: str, sender_password: str):
         """
         Initialize Email Agent with SMTP credentials
-        
-        Args:
-            smtp_server: SMTP server address
-            smtp_port: SMTP server port
-            sender_email: Sender email address
-            sender_password: Sender email password/app password
         """
         self.smtp_server = smtp_server
         self.smtp_port = smtp_port
         self.sender_email = sender_email
         self.sender_password = sender_password
     
+
+
+
+
     def send_notification(self, recipient: str, subject: str, 
                          body: str, action_type: str = "CRM Operation") -> Dict[str, Any]:
         """
@@ -84,6 +84,12 @@ class EmailAgent:
                 "message": f"Failed to send email: {str(e)}"
             }
     
+
+
+
+
+
+
     def send_contact_creation_notification(self, recipient: str, 
                                           contact_name: str, 
                                           contact_email: str,
@@ -114,6 +120,10 @@ class EmailAgent:
         
         return self.send_notification(recipient, subject, body, "Contact Creation")
     
+
+
+
+
     def send_contact_update_notification(self, recipient: str,
                                         contact_id: str,
                                         updated_fields: List[str]) -> Dict[str, Any]:
@@ -143,6 +153,10 @@ class EmailAgent:
         """
         
         return self.send_notification(recipient, subject, body, "Contact Update")
+    
+    
+
+    
     
     def send_deal_creation_notification(self, recipient: str,
                                        deal_name: str,
@@ -174,6 +188,9 @@ class EmailAgent:
         
         return self.send_notification(recipient, subject, body, "Deal Creation")
     
+    
+    
+    
     def send_deal_update_notification(self, recipient: str,
                                      deal_id: str,
                                      updated_fields: List[str]) -> Dict[str, Any]:
@@ -203,6 +220,10 @@ class EmailAgent:
         """
         
         return self.send_notification(recipient, subject, body, "Deal Update")
+    
+    
+    
+    
     
     def send_error_notification(self, recipient: str, 
                                error_message: str,

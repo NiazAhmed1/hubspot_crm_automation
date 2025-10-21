@@ -6,7 +6,9 @@ from langchain_core.prompts import ChatPromptTemplate
 from langgraph.graph import StateGraph, END
 from agents.hubspot_agent import HubSpotAgent
 from agents.email_agent import EmailAgent
-from langchain_groq import ChatGroq
+
+
+
 
 class DynamicAgentState(TypedDict):
     """State shared across agents"""
@@ -34,19 +36,13 @@ class DynamicGlobalOrchestrator:
         """
         self.config = config
         
-        # Initialize LLM
-        # self.llm = ChatOpenAI(
-        #     model=config["openai"]["model"],
-        #     api_key=config["openai"]["api_key"],
-        #     temperature=0
-        # )
-        
-  
-        self.llm = ChatGroq(
+        #Initialize LLM
+        self.llm = ChatOpenAI(
             model=config["openai"]["model"],
             api_key=config["openai"]["api_key"],
-            temperature=0
         )
+        
+
 
         
         # Initialize dynamic HubSpot agent
@@ -54,6 +50,9 @@ class DynamicGlobalOrchestrator:
             api_key=config["hubspot"]["api_key"],
             base_url=config["hubspot"]["base_url"]
         )
+
+
+
         
         # Initialize email agent
         self.email_agent = EmailAgent(
@@ -63,11 +62,15 @@ class DynamicGlobalOrchestrator:
             sender_password=config["email"]["sender_password"]
         )
         
-        self.notification_email = config["email"]["sender_email"]
         
+        
+        self.notification_email = config["email"]["sender_email"]
         # Build workflow
         self.workflow = self._build_workflow()
     
+
+
+    #design workflow
     def _build_workflow(self) -> StateGraph:
         """Build LangGraph workflow"""
         workflow = StateGraph(DynamicAgentState)
@@ -85,6 +88,9 @@ class DynamicGlobalOrchestrator:
         
         return workflow.compile()
     
+
+
+
     def _understand_query(self, state: DynamicAgentState) -> DynamicAgentState:
         """
         Understand ANY user query dynamically
@@ -245,6 +251,10 @@ class DynamicGlobalOrchestrator:
         
         return state
     
+    
+    
+    
+    
     def _execute_hubspot_operation(self, state: DynamicAgentState) -> DynamicAgentState:
         """
         Execute ANY HubSpot operation dynamically
@@ -323,6 +333,9 @@ class DynamicGlobalOrchestrator:
         
         return state
     
+    
+    
+    
     def _send_email_notification(self, state: DynamicAgentState) -> DynamicAgentState:
         """Send email notification"""
         try:
@@ -365,6 +378,9 @@ class DynamicGlobalOrchestrator:
             }
         
         return state
+    
+    
+    
     
     def _generate_final_response(self, state: DynamicAgentState) -> DynamicAgentState:
         """Generate final response"""

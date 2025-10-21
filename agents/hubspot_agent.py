@@ -1,26 +1,16 @@
-"""
-Dynamic HubSpot Agent - Handles ANY CRM operation with ANY properties
-This version is NOT hardcoded and supports all HubSpot fields dynamically
-"""
+
 import json
 import requests
 from typing import Dict, Any, Optional, List
 
 
 class HubSpotAgent:
-    """
-    Fully dynamic HubSpot agent that can work with any object type
-    and any properties without hardcoding
-    """
-    
+
     def __init__(self, api_key: str, base_url: str):
         """
         Initialize HubSpot Agent with API credentials
-        
-        Args:
-            api_key: HubSpot API key
-            base_url: HubSpot API base URL
         """
+
         self.api_key = api_key
         self.base_url = base_url
         self.headers = {
@@ -28,6 +18,11 @@ class HubSpotAgent:
             "Content-Type": "application/json"
         }
     
+
+
+
+
+
     def create_object(self, object_type: str, properties: Dict[str, Any]) -> Dict[str, Any]:
         """
         Create ANY HubSpot object with ANY properties (fully dynamic)
@@ -99,6 +94,12 @@ class HubSpotAgent:
                 "message": f"Failed to create {object_type}: {error_detail}"
             }
     
+    
+
+
+    
+    
+    
     def update_object(self, object_type: str, object_id: str, 
                      properties: Dict[str, Any]) -> Dict[str, Any]:
         """
@@ -144,6 +145,14 @@ class HubSpotAgent:
                 "object_type": object_type,
                 "message": f"Failed to update {object_type}: {error_detail}"
             }
+    
+    
+    
+    
+
+
+
+
     
     def search_objects(self, object_type: str, 
                       filters: List[Dict[str, Any]],
@@ -211,6 +220,11 @@ class HubSpotAgent:
                 "message": f"Failed to search {object_type}: {error_detail}"
             }
     
+    
+    
+    
+    
+    
     def get_object(self, object_type: str, object_id: str,
                    properties: Optional[List[str]] = None) -> Dict[str, Any]:
         """
@@ -248,6 +262,11 @@ class HubSpotAgent:
                 "message": f"Failed to get {object_type}: {error_detail}"
             }
     
+    
+    
+    
+    
+    
     def delete_object(self, object_type: str, object_id: str) -> Dict[str, Any]:
         """
         Delete any object
@@ -277,6 +296,10 @@ class HubSpotAgent:
                 "status": "error",
                 "message": f"Failed to delete {object_type}: {error_detail}"
             }
+    
+    
+    
+    
     
     def create_association(self, from_object_type: str, from_object_id: str,
                           to_object_type: str, to_object_id: str,
@@ -321,6 +344,9 @@ class HubSpotAgent:
                 "status": "error",
                 "message": f"Failed to create association: {error_detail}"
             }
+    
+    
+    
     
     def get_properties(self, object_type: str) -> Dict[str, Any]:
         """
@@ -367,6 +393,10 @@ class HubSpotAgent:
                 "message": f"Failed to get properties: {error_detail}"
             }
     
+    
+    
+    
+    
     def batch_create(self, object_type: str, 
                     objects: List[Dict[str, Any]]) -> Dict[str, Any]:
         """
@@ -410,6 +440,9 @@ class HubSpotAgent:
                 "message": f"Failed batch create: {error_detail}"
             }
     
+    
+    
+    
     def batch_update(self, object_type: str,
                     updates: List[Dict[str, Any]]) -> Dict[str, Any]:
         """
@@ -450,6 +483,10 @@ class HubSpotAgent:
                 "status": "error",
                 "message": f"Failed batch update: {error_detail}"
             }
+    
+    
+    
+    
     
     def _parse_error(self, exception: requests.exceptions.RequestException) -> str:
         """
