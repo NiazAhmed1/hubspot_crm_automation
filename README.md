@@ -51,7 +51,6 @@ venv\Scripts\activate
 # macOS/Linux:
 source venv/bin/activate
 
-# Your prompt should now show (venv)
 ```
 
 ## Step 2: Install Dependencies
