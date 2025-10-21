@@ -19,7 +19,7 @@ This project implements an intelligent Multi-Agent CRM Automation System integra
 
 ```bash
 git clone https://github.com/NiazAhmed1/hubspot_crm_automation.git
-cd Email_MCP
+cd hubspot_crm_automation
 ```
 
 
